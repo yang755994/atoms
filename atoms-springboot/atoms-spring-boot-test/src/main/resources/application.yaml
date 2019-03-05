@@ -1,10 +1,12 @@
+
 atoms:
   application: aa
   broadcast:
     type: redis
     channel: testch
     broadcastConfig:
-      host: 192.168.1.85
+      #host: 192.168.1.85
+      host: 127.0.0.1
       port: 6379
       usePool: true
       timeout: 0
@@ -30,7 +32,8 @@ atoms:
    - level: 2
      type: redis
      cacheConfig:
-       host: 192.168.1.85
+       #host: 192.168.1.85
+       host: 127.0.0.1
        port: 6379
        timeout: 2000
        database: 15
@@ -48,6 +51,9 @@ atoms:
        testWhileIdle: false
        timeBetweenEvictionRunsMillis: 300000
        blockWhenExhausted: true
+server:
+  port: 8099
+  display-name: atoms
 
 
 
