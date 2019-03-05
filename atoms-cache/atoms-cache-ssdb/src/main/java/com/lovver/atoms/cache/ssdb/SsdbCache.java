@@ -33,7 +33,7 @@ public class SsdbCache implements Cache {
 	protected String region;
 	protected SSDBDataSource ssdbDs;
 	private String srcRegion;
-	
+
 	private String namespace;
 	private CacheEventListener listener;
 	private String host;
@@ -41,7 +41,7 @@ public class SsdbCache implements Cache {
 	private AtomsCacheTTLConfigBean ttlConfigBean=null;
 	private int level;
 	private boolean boardset=false;
-	
+
 
 	public SsdbCache(String region, SSDBDataSource ssdbDs, String namespace, CacheEventListener listener, String host,int level) {
 		if (region == null || region.isEmpty())
@@ -81,7 +81,7 @@ public class SsdbCache implements Cache {
 		}
 		return region;
 	}
-	
+
 	protected byte[] getKeyName(Object key) {
 		if(key instanceof Number)
 			return ("I:" + key).getBytes();
@@ -351,6 +351,6 @@ public class SsdbCache implements Cache {
 		this.clear();
 		if(listener!=null){
 			listener.notifyRemoveAll(this.srcRegion);
-		} 
+		}
 	}
 }

@@ -41,9 +41,12 @@
             <version>1.0.18-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.lovver.ssdbj</groupId>
+            <!--<groupId>com.lovver.ssdbj</groupId>
             <artifactId>ssdbj-core</artifactId>
-            <version>0.0.2</version>
+            <version>0.0.2</version>-->
+            <groupId>com.lovver</groupId>
+            <artifactId>ssdbj</artifactId>
+            <version>0.0.1</version>
         </dependency>
         <dependency>
             <groupId>com.lovver.atoms</groupId>

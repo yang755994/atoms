@@ -26,18 +26,18 @@ import com.lovver.atoms.context.AtomsContext;
  */
 @SPI("ssdb")
 public class SsdbCacheProvider implements CacheProvider {
-	
+
 	private SSDBDataSource ssdbDs;
 	private AtomsCacheConfigBean cacheConfig;
 	private String host;
 	private int level;
-	
+
 	protected ConcurrentHashMap<String, SsdbCache> caches = new ConcurrentHashMap<>();
-	
+
 	public String name() {
 		return "ssdb";
 	}
-    
+
 	// 这个实现有个问题,如果不使用RedisCacheProvider,但又使用RedisCacheChannel,这就NPE了
 //    public Jedis getResource() {
 //    	return pool.getResource();
@@ -57,7 +57,7 @@ public class SsdbCacheProvider implements CacheProvider {
 		}
 		return cache;
     }
-	
+
 	private String null2default(String value,String defalutValue){
 		if(StringUtils.isEmpty(value)){
 			return defalutValue;
@@ -79,7 +79,7 @@ public class SsdbCacheProvider implements CacheProvider {
 
 		//JedisPoolConfig config = new JedisPoolConfig();
 		cacheConfig=cacheBean.getCacheConfig();
-		
+
 		String host = null2default(cacheConfig.getHost(),"127.0.0.1");
 		this.host=host;
 		String password = cacheConfig.getPassword();
@@ -88,8 +88,8 @@ public class SsdbCacheProvider implements CacheProvider {
         }
 
 		String sPort=null2default(cacheConfig.getPort(),"8888");
-		int port = Integer.parseInt(sPort); 
-		
+		int port = Integer.parseInt(sPort);
+
 		String sTimeout=null2default(cacheConfig.getTimeout(),"2000");
 		if(StringUtils.isNotEmpty(sTimeout)) {
 			info.setProperty("loginTimeout", sTimeout);

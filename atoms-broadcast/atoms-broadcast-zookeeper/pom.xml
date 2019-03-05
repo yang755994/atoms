@@ -52,9 +52,12 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>com.lovver.zkclient</groupId>
+            <groupId>com.api6</groupId>
             <artifactId>zkclient</artifactId>
             <version>1.0.0</version>
+            <!--<groupId>com.lovver.zkclient</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>1.0.0</version>-->
             <exclusions>
                 <exclusion>
                     <artifactId>slf4j-api</artifactId>
